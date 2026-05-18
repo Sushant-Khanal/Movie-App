@@ -17,7 +17,7 @@ function Home() {
             try{
                 const popularMovies = await getPopularMovies()
                 setMovies(popularMovies)
-            } catch (err) {
+            } catch {
                 setError("Error fetching popular movies");
             }
             finally{
@@ -28,17 +28,8 @@ function Home() {
       loadPopularMovies()  
     }, [])
 
-    // const movies =[
-    //         { id: 1, title: "Inception", year: 2010 },
-    //         { id: 2, title: "Interstellar", year: 2014 },
-    //         { id: 3, title: "The Dark Knight", year: 2008 },
-    //     ]
-
-
-
         const handleSearch = async (e) => {
             e.preventDefault();
-            // Implement search logic here, e.g., filter movies based on searchQuery
             if (!searchQuery.trim()) return
             if (loading) return
 
@@ -47,7 +38,7 @@ function Home() {
                 const searchResults = await searchMovies(searchQuery)
                 setMovies(searchResults)
                 setError(null)
-            }catch(err){
+            }catch{
                 setError("Error fetching search results");
             } finally{
                 setLoading(false)
