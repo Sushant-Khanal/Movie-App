@@ -1,7 +1,7 @@
 import MovieCard from "../components/MovieCard";
-import {useState , useEffect} from "react"
-import {searchMovies, getPopularMovies} from "../services/api"
-import "../css/Home.css"
+import {useState , useEffect} from "react";
+import {searchMovies, getPopularMovies} from "../services/api";
+import "../css/Home.css";
 
 
 function Home() {
@@ -10,7 +10,7 @@ function Home() {
 
     const [movies, setMovies] = useState([]);
     const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const loadPopularMovies = async () => {
